@@ -95,7 +95,7 @@ class BestwaySpaDeviceV01Status(BestwayDeviceStatus):
     temp_set: float
     temp_set_unit: TemperatureUnit
     heat_power: bool
-    # heat_temp_reach: bool
+    heat_temp_reach: bool
     filter_power: bool
     wave_power: int
     # locked: bool
