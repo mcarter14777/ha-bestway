@@ -225,7 +225,7 @@ class BestwayApi:
 
                     self._spa_state_cache[did] = spa_status
                     
-                elif device_info.device_type == BestwayDeviceType.AIRJET_V01:
+                elif device_info.device_type == BestwayDeviceType.Airjet_V01:
                     errors = []
                     for err_num in range(1, 10):
                         if device_attrs[f"system_err{err_num}"] == 1:
