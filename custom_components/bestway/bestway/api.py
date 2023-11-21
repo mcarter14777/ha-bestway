@@ -228,8 +228,12 @@ class BestwayApi:
                 elif device_info.device_type == BestwayDeviceType.Airjet_V01:
                     errors = []
                     for err_num in range(1, 32):
-                        if device_attrs[f"E{err_num}"] == 1:
-                            errors.append(err_num)
+                        if err_num < 10:
+                            if device_attrs[f"E0{err_num}"] == 1:
+                                errors.append(err_num)
+                        else:
+                            if device_attrs[f"E{err_num}"] == 1:
+                                errors.append(err_num)                            
 
                     spa_status = BestwaySpaDeviceStatus(
                         latest_data["updated_at"],
