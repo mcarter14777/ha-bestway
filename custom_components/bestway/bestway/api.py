@@ -251,9 +251,9 @@ class BestwayApi:
                         device_attrs["Tnow"] >= device_attrs["Tset"],
                         device_attrs["filter"] > 0,
                         device_attrs["wave"],
-                        #device_attrs["locked"] == 1,
+                        0,
                         errors,
-                        #device_attrs["earth"] == 1,
+                        0,
                     )
 
                     self._spa_state_cache[did] = spa_status
