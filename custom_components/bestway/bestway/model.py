@@ -90,17 +90,17 @@ class BestwaySpaDeviceStatus(BestwayDeviceStatus):
 class BestwaySpaDeviceV01Status(BestwayDeviceStatus):
     """A snapshot of the status of a spa (i.e. Lay-Z-Spa) V01device."""
 
-    spa_power: bool
-    temp_now: float
-    temp_set: float
-    temp_set_unit: TemperatureUnit
-    heat_power: bool
-    heat_temp_reach: bool
-    filter_power: bool
-    wave_power: bool
-    locked: bool
+    power: bool
+    Tnow: float
+    Tset: float
+    Tunit: TemperatureUnit
+    heat: bool
+    # heat_temp_reach: bool
+    filter: bool
+    wave: int
+    # locked: bool
     errors: list[int]
-    earth_fault: bool
+    # earth_fault: bool
 
 @dataclass
 class BestwayPoolFilterDeviceStatus(BestwayDeviceStatus):
