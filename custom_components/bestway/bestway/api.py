@@ -234,21 +234,21 @@ class BestwayApi:
                     spa_status = BestwaySpaDeviceStatus(
                         latest_data["updated_at"],
                         device_attrs["power"],
-                        device_attrs["temp_now"],
-                        device_attrs["temp_set"],
+                        device_attrs["Tnow"],
+                        device_attrs["Tset"],
                         (
                             TemperatureUnit.CELSIUS
-                            if device_attrs["temp_set_unit"]
+                            if device_attrs["Tunit"]
                             == 1  # 1 is "Celsius"
                             else TemperatureUnit.FAHRENHEIT
                         ),
-                        device_attrs["heat_power"] == 1,
-                        device_attrs["heat_temp_reach"] == 1,
-                        device_attrs["filter_power"] == 1,
-                        device_attrs["wave_power"] == 1,
-                        device_attrs["locked"] == 1,
+                        device_attrs["heat"] > 0,
+                        # device_attrs["heat_temp_reach"] == 1,
+                        device_attrs["filter"] > 0,
+                        device_attrs["wave"],
+                        #device_attrs["locked"] == 1,
                         errors,
-                        device_attrs["earth"] == 1,
+                        #device_attrs["earth"] == 1,
                     )
 
                     self._spa_state_cache[did] = spa_status
