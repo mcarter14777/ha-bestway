@@ -98,9 +98,9 @@ class BestwaySpaDeviceV01Status(BestwayDeviceStatus):
     heat_temp_reach: bool
     filter_power: bool
     wave_power: int
-    # locked: bool
+    locked: bool
     errors: list[int]
-    # earth_fault: bool
+    earth_fault: bool
 
 @dataclass
 class BestwayPoolFilterDeviceStatus(BestwayDeviceStatus):
