@@ -239,7 +239,7 @@ class BestwayApi:
                         (
                             TemperatureUnit.CELSIUS
                             if device_attrs["temp_set_unit"]
-                            == "摄氏"  # Chinese translates to "Celsius"
+                            == 1  # 1 is "Celsius"
                             else TemperatureUnit.FAHRENHEIT
                         ),
                         device_attrs["heat_power"] == 1,
