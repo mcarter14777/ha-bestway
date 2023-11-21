@@ -248,7 +248,7 @@ class BestwayApi:
                             else TemperatureUnit.FAHRENHEIT
                         ),
                         device_attrs["heat"] > 0,
-                        # device_attrs["heat_temp_reach"] == 1,
+                        device_attrs["Tnow"] >= device_attrs["Tset"],
                         device_attrs["filter"] > 0,
                         device_attrs["wave"],
                         #device_attrs["locked"] == 1,
