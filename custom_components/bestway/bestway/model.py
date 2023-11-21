@@ -23,7 +23,7 @@ class BestwayDeviceType(Enum):
 
         if product_name == "Airjet":
             return BestwayDeviceType.AIRJET_SPA
-        if product_name == "Airjet V01":
+        if product_name == "Airjet_V01":
             return BestwayDeviceType.Airjet_V01
         if product_name == "泳池过滤器":
             # Chinese translates to "pool filter"
