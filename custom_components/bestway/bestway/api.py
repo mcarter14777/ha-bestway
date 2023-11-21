@@ -15,6 +15,7 @@ from .model import (
     BestwayDeviceType,
     BestwayPoolFilterDeviceStatus,
     BestwaySpaDeviceStatus,
+    BestwaySpaDeviceV01Status
     BestwayUserToken,
     TemperatureUnit,
 )
