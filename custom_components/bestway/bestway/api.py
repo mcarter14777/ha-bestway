@@ -224,6 +224,34 @@ class BestwayApi:
                     )
 
                     self._spa_state_cache[did] = spa_status
+                    
+                elif device_info.device_type == BestwayDeviceType.AIRJET_V01:
+                    errors = []
+                    for err_num in range(1, 10):
+                        if device_attrs[f"system_err{err_num}"] == 1:
+                            errors.append(err_num)
+
+                    spa_status = BestwaySpaDeviceStatus(
+                        latest_data["updated_at"],
+                        device_attrs["power"],
+                        device_attrs["temp_now"],
+                        device_attrs["temp_set"],
+                        (
+                            TemperatureUnit.CELSIUS
+                            if device_attrs["temp_set_unit"]
+                            == "摄氏"  # Chinese translates to "Celsius"
+                            else TemperatureUnit.FAHRENHEIT
+                        ),
+                        device_attrs["heat_power"] == 1,
+                        device_attrs["heat_temp_reach"] == 1,
+                        device_attrs["filter_power"] == 1,
+                        device_attrs["wave_power"] == 1,
+                        device_attrs["locked"] == 1,
+                        errors,
+                        device_attrs["earth"] == 1,
+                    )
+
+                    self._spa_state_cache[did] = spa_status
 
                 elif device_info.device_type == BestwayDeviceType.POOL_FILTER:
                     # The status attribute has been observed with the following values
