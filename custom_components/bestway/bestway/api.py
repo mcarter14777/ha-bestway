@@ -235,7 +235,7 @@ class BestwayApi:
                             if device_attrs[f"E{err_num}"] == 1:
                                 errors.append(err_num)                            
 
-                    spa_status = BestwaySpaDeviceStatus(
+                    spa_status = BestwaySpaDeviceV01Status(
                         latest_data["updated_at"],
                         device_attrs["power"],
                         device_attrs["Tnow"],
